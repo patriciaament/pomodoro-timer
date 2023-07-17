@@ -1,11 +1,9 @@
 :root {
-    font-size: 62.5%;
-
-    --color-primary: hsl(240, 6%, 7%);
-    --color-secondary: hsl(358, 78%, 69%);
-    --color-font: hsl(34, 58%, 92%);
-    --color-shadow: hsl(315, 13%, 49%);
-
+    font-size: 80%;
+    --color-primary: hsl(0, 0%, 100%);
+    --color-secondary: hsl(0, 0%, 0%);
+    --color-shadow: hsl(314, 19%, 83%);
+    font-family: 'Space Grotesk', sans-serif;
 }
 
 * {
@@ -16,20 +14,15 @@
 
 html, body {
     height: 100%;
-    background-color: var(--color-primary);
-    font-size: 1.6rem;
-    font-family: 'Space Grotesk', sans-serif;
+    background-image: url('bg.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
-p,
-i,
-h1 {
-    color: var(--color-font);
-}
-
-i, 
-h1 {
-    font-size: 3.2rem;
+p{
+    color: var(--color-primary);
+    font-size: 8rem;
 }
 
 section {
@@ -38,8 +31,33 @@ section {
     height: 100%;
 }
 
+.btn {
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: var(--color-primary);
+    margin-left: 2rem;
+    margin-right: 2rem;
+    align-items: center;
+    width: 12rem;
+    padding: 0.675rem 1.25rem;
+    border-radius: 5rem;
+    margin-bottom: 4rem;
+    box-shadow: 0px 0px 1px 1px var(--color-primary);
+}
+
+.btn:hover {
+    font-weight: 5rem;
+    color: var(--color-secondary);
+    background-color: var(--color-primary);
+}
+
+.btn.active {
+    color: var(--color-secondary);
+    background-color: var(--color-primary);
+}
+
 .container {
-    width: min(42.5rem, 100%);
+    width: min(50.5rem, 100%);
     margin-inline: auto;
     padding-inline: 2rem;
     display: flex;
@@ -54,39 +72,22 @@ section {
     text-align: center;
 }
 
-.btn {
-    margin-left: 2rem;
-    align-items: center;
-    width: 12rem;
-    padding: 0.675rem 1.25rem;
-    border-radius: 6rem;
-    margin-bottom: 4rem;
-    -webkit-box-shadow: 0px 0px 5px 1px var(--color-shadow); 
-    box-shadow: 0px 0px 5px 1px var(--color-shadow);
-}
-
 .pannel button {
-    opacity: .8;
-    transition: 1s ease-in;
     border: none;
     background-color: transparent;
     cursor: pointer;
     font-family: 'Space Grotesk', sans-serif;
 }
 
-.pannel button.active {
-    opacity: 1;
-    color: var(--color-secondary)
-}
 
 .timer {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 30rem;
-    height: 30rem;
+    width: 28rem;
+    height: 28rem;
     border-radius: 50%;
-    -webkit-box-shadow: 0px 0px 5px 1px var(--color-font); 
+    -webkit-box-shadow: 0px 0px 5px 1px var(--color-primary); 
     box-shadow: 0px 0px 10px 5px var(--color-shadow);
 }
 
@@ -95,28 +96,16 @@ section {
     justify-content: center;
     align-items: center;
     position: relative;
-    width: 26rem;
-    height: 26rem;
+    width: 28rem;
+    height: 28rem;
     border-radius: 50%;
-    background-color: var(--color-secondary);
+    background-color: transparent;
 }
 
-.circle::before {
-    content: '';
-    position: absolute;
-    width: 95%;
-    height: 95%;
-    border-radius: 50%;
-    background-color: var(--color-primary);
-}
 
 .time {
     position: relative;
     display: flex; 
-}
-
-.time p {
-    font-size: 5.6rem; 
 }
 
 .time p:nth-of-type(2) {
@@ -125,16 +114,27 @@ section {
     margin-inline: 1rem;
 }
 
-.controls {
-    margin-top: 3rem;
-}
-
 .controls button {
+    padding: 0.5rem 1rem;
+    font-weight: 900;
+    font-size: 1.8rem;
+    margin: 3rem;
     border: none;
     background-color: transparent;
     cursor: pointer;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.controls button:hover{
+    background-color: var(--color-primary);
+}
+
+.controls.active{
+    background-color: var(--color-primary);
 }
 
 .controls #reset {
     display: none;
+    font-size: 3.5rem;
+    margin: 2.5rem;
 }
