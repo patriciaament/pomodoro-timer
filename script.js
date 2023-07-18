@@ -11,6 +11,7 @@ let seconds = "00"
 window.onload = () => {
     document.getElementById('minutes').innerHTML = workTime;
     document.getElementById('seconds').innerHTML = seconds;
+    window.localStorage.setItem("pause", 25)
     workOption.classList.add('active');
     initial.classList.add('active');
 }
@@ -40,6 +41,7 @@ window.onclick = function (event) {
 
 }
 
+
 function start() {
     document.getElementById('start').style.display = "none";
     document.getElementById('reset').style.display = "block";
@@ -67,7 +69,7 @@ function start() {
 
     function minutesTimer() {
         timeMinutes = timeMinutes - 1;
-        document.getElementById("minutes").innerHTML = timeMinutes;
+        document.getElementById("minutes").innerHTML = timeMinutes - 1;
     }
 
     function secondsTimer() {
@@ -76,6 +78,7 @@ function start() {
 
         if (seconds <= 0) {
             if (timeMinutes <= 0) {
+                document.getElementById("minutes").innerHTML = 0;
                 clearInterval(minInterval);
                 clearInterval(secInterval);
             }
